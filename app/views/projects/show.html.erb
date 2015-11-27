@@ -1,0 +1,52 @@
+<div class="page-header">
+  <h3>Project #<%= @project.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>User</dt>
+      <dd><%= @project.user_id %></dd>
+
+      <dt>Industry comparable</dt>
+      <dd><%= @project.industry_comparable_id %></dd>
+
+      <dt>Indirect costs</dt>
+      <dd><%= @project.indirect_costs %></dd>
+
+      <dt>Direct costs</dt>
+      <dd><%= @project.direct_costs %></dd>
+
+      <dt>Gap dollar</dt>
+      <dd><%= @project.gap_dollar %></dd>
+
+      <dt>Gap percent</dt>
+      <dd><%= @project.gap_percent %></dd>
+
+      <dt>Should cost</dt>
+      <dd><%= @project.should_cost %></dd>
+
+      <dt>Actual cost</dt>
+      <dd><%= @project.actual_cost %></dd>
+
+      <dt>Industry</dt>
+      <dd><%= @project.industry %></dd>
+
+      <dt>Name</dt>
+      <dd><%= @project.name %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/projects" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/projects/<%= @project.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_project/<%= @project.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

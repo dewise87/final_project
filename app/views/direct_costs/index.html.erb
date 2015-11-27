@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>
+    Direct costs
+    <a href="/direct_costs/new" class="btn btn-lg btn-success">New Direct cost</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Amount</th>
+        <th>Category name</th>
+        <th>Project</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @direct_costs.each do |direct_cost| %>
+      <tr>
+        <td><%= direct_cost.amount %></td>
+        <td><%= direct_cost.category_name %></td>
+        <td><%= direct_cost.project_id %></td>
+        <td>
+          <a href="/direct_costs/<%= direct_cost.id %>" class="btn btn-primary">Show</a>
+          <a href="/direct_costs/<%= direct_cost.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_direct_cost/<%= direct_cost.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

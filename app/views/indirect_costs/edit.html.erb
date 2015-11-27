@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @indirect_cost.errors.any? %>
+  <% @indirect_cost.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Indirect Cost #<%= @indirect_cost.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_indirect_cost/<%= @indirect_cost.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for project_id -->
+      <div class="form-group">
+        <label for="project_id" class="control-label">
+          Project
+        </label>
+
+        <input type="text" id="project_id" name="project_id" placeholder="Project" class="form-control" value="<%= @indirect_cost.project_id %>">
+      </div>
+
+      <!-- Label and input for profit -->
+      <div class="form-group">
+        <label for="profit" class="control-label">
+          Profit
+        </label>
+
+        <input type="text" id="profit" name="profit" placeholder="Profit" class="form-control" value="<%= @indirect_cost.profit %>">
+      </div>
+
+      <!-- Label and input for sga -->
+      <div class="form-group">
+        <label for="sga" class="control-label">
+          Sga
+        </label>
+
+        <input type="text" id="sga" name="sga" placeholder="Sga" class="form-control" value="<%= @indirect_cost.sga %>">
+      </div>
+
+      <!-- Label and input for rd -->
+      <div class="form-group">
+        <label for="rd" class="control-label">
+          Rd
+        </label>
+
+        <input type="text" id="rd" name="rd" placeholder="Rd" class="form-control" value="<%= @indirect_cost.rd %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Indirect Cost
+      </button>
+      or
+      <a href="/indirect_costs/<%= @indirect_cost.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

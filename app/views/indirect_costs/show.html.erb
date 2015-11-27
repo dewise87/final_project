@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h3>Indirect Cost #<%= @indirect_cost.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Project</dt>
+      <dd><%= @indirect_cost.project_id %></dd>
+
+      <dt>Profit</dt>
+      <dd><%= @indirect_cost.profit %></dd>
+
+      <dt>Sga</dt>
+      <dd><%= @indirect_cost.sga %></dd>
+
+      <dt>Rd</dt>
+      <dd><%= @indirect_cost.rd %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/indirect_costs" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/indirect_costs/<%= @indirect_cost.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_indirect_cost/<%= @indirect_cost.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
