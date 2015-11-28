@@ -26,12 +26,12 @@
       <tr>
         <td><%= project.user.username %></td>
         <td><%= project.name %></td>
-        <td><%= @indirect %></td>
-        <td><%= project.direct_costs %></td>
-        <td><%= @gap_dollar %></td>
-        <td><%= @gap_percent %></td>
-        <td><%= @total %></td>
-        <td><%= project.actual_cost %></td>
+        <td>$<%= @indirect %></td>
+        <td>$<%= project.direct_costs %></td>
+        <td>$<%= @gap_dollar %></td>
+        <td><%= @gap_percent %>%</td>
+        <td>$<%= @total %></td>
+        <td>$<%= project.actual_cost %></td>
         <td><%= project.industry %></td>
         <td>
           <% if current_user.id==project.user_id %>

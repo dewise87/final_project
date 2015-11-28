@@ -19,11 +19,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new
     @project.user_id = params[:user_id]
-    @project.indirect_costs = params[:indirect_costs]
     @project.direct_costs = params[:direct_costs]
-    @project.gap_dollar = params[:gap_dollar]
-    @project.gap_percent = params[:gap_percent]
-    @project.should_cost = params[:should_cost]
     @project.actual_cost = params[:actual_cost]
     @project.industry = params[:industry]
     @project.name = params[:name]
@@ -49,11 +45,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     @project.user_id = params[:user_id]
-    @project.indirect_costs = params[:indirect_costs]
     @project.direct_costs = params[:direct_costs]
-    @project.gap_dollar = params[:gap_dollar]
-    @project.gap_percent = params[:gap_percent]
-    @project.should_cost = params[:should_cost]
     @project.actual_cost = params[:actual_cost]
     @project.industry = params[:industry]
     @project.name = params[:name]
