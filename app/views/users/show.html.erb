@@ -1,8 +1,9 @@
-<div class="page-header">
-  <h1>
-    Projects
-    <a href="/projects/new" class="btn btn-lg btn-success">New Project</a>
-  </h1>
+<div class="col-md-8 col-md-offset-2">
+  <div class="jumbotron">
+    <h3>
+      <%= @user.username %>
+    </h3>
+  </div>
 </div>
 
 <div class="row">
@@ -21,7 +22,7 @@
         <th>Actions</th>
       </tr>
 
-      <% @projects.each do |project| %>
+      <% @user.projects.each do |project| %>
       <tr>
         <td><%= project.user.username %></td>
         <td><%= project.name %></td>

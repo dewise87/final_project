@@ -9,22 +9,22 @@
       <dd><%= @project.user_id %></dd>
 
       <dt>Indirect costs</dt>
-      <dd><%= @project.indirect_costs %></dd>
+      <dd>$<%= @indirect %></dd>
 
       <dt>Direct costs</dt>
-      <dd><%= @project.direct_costs %></dd>
+      <dd>$<%= @project.direct_costs %></dd>
 
       <dt>Gap dollar</dt>
-      <dd><%= @project.gap_dollar %></dd>
+      <dd>$<%= @gap_dollar %></dd>
 
       <dt>Gap percent</dt>
-      <dd><%= @project.gap_percent %></dd>
+      <dd><%= @gap_percent %>%</dd>
 
       <dt>Should cost</dt>
-      <dd><%= @project.should_cost %></dd>
+      <dd>$<%= @total %></dd>
 
       <dt>Actual cost</dt>
-      <dd><%= @project.actual_cost %></dd>
+      <dd>$<%= @project.actual_cost %></dd>
 
       <dt>Industry</dt>
       <dd><%= @project.industry %></dd>

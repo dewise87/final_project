@@ -5,10 +5,15 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @total = (@project.direct_costs / (1 - (@project.rd + @project.sga + @project.profit)/100)).round(2)
+    @indirect = (@total - @project.direct_costs).round(2)
+    @gap_dollar = (@project.actual_cost - @total).round(2)
+    @gap_percent = ((@gap_dollar / @project.actual_cost) * 100).round(2)
   end
 
   def new
     @project = Project.new
+
   end
 
   def create
@@ -22,6 +27,9 @@ class ProjectsController < ApplicationController
     @project.actual_cost = params[:actual_cost]
     @project.industry = params[:industry]
     @project.name = params[:name]
+    @project.rd = params[:rd]
+    @project.sga = params[:sga]
+    @project.profit = params[:profit]
 
     if @project.save
       redirect_to "/projects", :notice => "Project created successfully."
@@ -46,6 +54,9 @@ class ProjectsController < ApplicationController
     @project.actual_cost = params[:actual_cost]
     @project.industry = params[:industry]
     @project.name = params[:name]
+    @project.rd = params[:rd]
+    @project.sga = params[:sga]
+    @project.profit = params[:profit]
 
     if @project.save
       redirect_to "/projects", :notice => "Project updated successfully."
