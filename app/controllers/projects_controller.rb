@@ -40,6 +40,9 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    if current_user != @project.user
+      redirect_to "/projects", :alert => "You may only edit your own models."
+    end
   end
 
   def update
