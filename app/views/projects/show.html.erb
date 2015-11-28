@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h3>Project #<%= @project.id %></h3>
+  <h3><%= @project.name %></h3>
 </div>
 
 <div class="row">
@@ -7,9 +7,6 @@
     <dl class="dl-horizontal">
       <dt>User</dt>
       <dd><%= @project.user_id %></dd>
-
-      <dt>Industry comparable</dt>
-      <dd><%= @project.industry_comparable_id %></dd>
 
       <dt>Indirect costs</dt>
       <dd><%= @project.indirect_costs %></dd>
@@ -37,6 +34,7 @@
 
     </dl>
 
+    <% if current_user.id==@project.user_id %>
     <div class="btn-group btn-group-justified">
       <a href="/projects" class="btn btn-primary">
         Back
@@ -47,6 +45,12 @@
       <a href="/delete_project/<%= @project.id %>" class="btn btn-danger" rel="nofollow">
         Delete
       </a>
+    <% else %>
+    <div class="btn-group btn-group-justified">
+      <a href="/projects" class="btn btn-primary">
+        Back
+      </a>
     </div>
   </div>
 </div>
+<% end %>

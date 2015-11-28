@@ -19,75 +19,63 @@
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
       <!-- Label and input for user_id -->
+
+        <input type="hidden" id="user_id" name="user_id" value="<%= current_user.id %>">
+
+      <!-- Label and input for name -->
       <div class="form-group">
-        <label for="user_id" class="control-label">
-          User
+        <label for="name" class="control-label">
+          Project Name
         </label>
 
-        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @project.user_id %>">
-      </div>
-
-      <!-- Label and input for industry_comparable_id -->
-      <div class="form-group">
-        <label for="industry_comparable_id" class="control-label">
-          Industry comparable
-        </label>
-
-        <input type="text" id="industry_comparable_id" name="industry_comparable_id" placeholder="Industry comparable" class="form-control" value="<%= @project.industry_comparable_id %>">
+        <input type="text" id="name" name="name" placeholder="Project Name" class="form-control" value="<%= @project.name %>">
       </div>
 
       <!-- Label and input for indirect_costs -->
-      <div class="form-group">
-        <label for="indirect_costs" class="control-label">
-          Indirect costs
+        <label>
+          Indirect Costs
         </label>
 
-        <input type="text" id="indirect_costs" name="indirect_costs" placeholder="Indirect costs" class="form-control" value="<%= @project.indirect_costs %>">
+      <div class="form-group">
+        <label for="rd" class="control-label">
+          R&D %
+        </label>
+
+        <input type="text" id="rd" name="rd" placeholder="R&D" class="form-control" value="<%= @project.rd %>">
+      </div>
+
+      <div class="form-group">
+        <label for="sga" class="control-label">
+          SG&A %
+        </label>
+
+        <input type="text" id="sga" name="sga" placeholder="SG&A" class="form-control" value="<%= @project.sga %>">
+      </div>
+
+      <div class="form-group">
+        <label for="profit" class="control-label">
+          EBIT Margin %
+        </label>
+
+        <input type="text" id="profit" name="profit" placeholder="EBIT Margin" class="form-control" value="<%= @project.profit %>">
       </div>
 
       <!-- Label and input for direct_costs -->
       <div class="form-group">
         <label for="direct_costs" class="control-label">
-          Direct costs
+          Direct Costs
         </label>
 
-        <input type="text" id="direct_costs" name="direct_costs" placeholder="Direct costs" class="form-control" value="<%= @project.direct_costs %>">
-      </div>
-
-      <!-- Label and input for gap_dollar -->
-      <div class="form-group">
-        <label for="gap_dollar" class="control-label">
-          Gap dollar
-        </label>
-
-        <input type="text" id="gap_dollar" name="gap_dollar" placeholder="Gap dollar" class="form-control" value="<%= @project.gap_dollar %>">
-      </div>
-
-      <!-- Label and input for gap_percent -->
-      <div class="form-group">
-        <label for="gap_percent" class="control-label">
-          Gap percent
-        </label>
-
-        <input type="text" id="gap_percent" name="gap_percent" placeholder="Gap percent" class="form-control" value="<%= @project.gap_percent %>">
-      </div>
-
-      <!-- Label and input for should_cost -->
-      <div class="form-group">
-        <label for="should_cost" class="control-label">
-          Should cost
-        </label>
-
-        <input type="text" id="should_cost" name="should_cost" placeholder="Should cost" class="form-control" value="<%= @project.should_cost %>">
+        <input type="text" id="direct_costs" name="direct_costs" placeholder="Direct Costs" class="form-control" value="<%= @project.direct_costs %>">
       </div>
 
       <!-- Label and input for actual_cost -->
       <div class="form-group">
         <label for="actual_cost" class="control-label">
-          Actual cost
+          Actual Cost
         </label>
 
-        <input type="text" id="actual_cost" name="actual_cost" placeholder="Actual cost" class="form-control" value="<%= @project.actual_cost %>">
+        <input type="text" id="actual_cost" name="actual_cost" placeholder="Actual Cost" class="form-control" value="<%= @project.actual_cost %>">
       </div>
 
       <!-- Label and input for industry -->
@@ -99,14 +87,6 @@
         <input type="text" id="industry" name="industry" placeholder="Industry" class="form-control" value="<%= @project.industry %>">
       </div>
 
-      <!-- Label and input for name -->
-      <div class="form-group">
-        <label for="name" class="control-label">
-          Name
-        </label>
-
-        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @project.name %>">
-      </div>
 
       <button class="btn btn-warning">
         Update Project

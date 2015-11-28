@@ -19,13 +19,7 @@
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
       <!-- Label and input for user_id -->
-      <div class="form-group">
-        <label for="user_id" class="control-label">
-          User
-        </label>
-
-        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @project.user_id %>">
-      </div>
+      <input type="hidden" id="user_id" name="user_id" value="<%= current_user.id %>">
 
       <!-- Label and input for project name -->
       <div class="form-group">
@@ -37,12 +31,32 @@
       </div>
 
       <!-- Label and input for indirect_costs -->
-      <div class="form-group">
-        <label for="indirect_costs" class="control-label">
-          Indirect costs
+        <label>
+          Indirect Costs
         </label>
 
-        <input type="text" id="indirect_costs" name="indirect_costs" placeholder="Indirect costs" class="form-control" value="<%= @project.indirect_costs %>">
+      <div class="form-group">
+        <label for="rd" class="control-label">
+          R&D %
+        </label>
+
+        <input type="text" id="rd" name="rd" placeholder="R&D" class="form-control" value="<%= @project.rd %>">
+      </div>
+
+      <div class="form-group">
+        <label for="sga" class="control-label">
+          SG&A %
+        </label>
+
+        <input type="text" id="sga" name="sga" placeholder="SG&A" class="form-control" value="<%= @project.sga %>">
+      </div>
+
+      <div class="form-group">
+        <label for="profit" class="control-label">
+          EBIT Margin %
+        </label>
+
+        <input type="text" id="profit" name="profit" placeholder="EBIT Margin" class="form-control" value="<%= @project.profit %>">
       </div>
 
       <!-- Label and input for direct_costs -->
