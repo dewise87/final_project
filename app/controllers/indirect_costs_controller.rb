@@ -1,4 +1,4 @@
-class IndirectCostsController < ApplicationController
+lass IndirectCostsController < ApplicationController
   def index
     @indirect_costs = IndirectCost.all
   end
