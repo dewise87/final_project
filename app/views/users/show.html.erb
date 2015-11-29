@@ -1,23 +1,17 @@
-<div class="col-md-8 col-md-offset-2">
-  <div class="jumbotron">
-    <h3>
-      <%= @user.username %>
-    </h3>
+<div class="page-header">
+  <div class="col-md-offset-2">
+    <h2>
+      <%= @user.username %>'s Projects
+    </h2>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-8 col-md-offset-2">
     <table class="table table-striped table-hover">
       <tr>
         <th>User</th>
         <th>Project Name</th>
-        <th>Indirect Costs</th>
-        <th>Direct Costs</th>
-        <th>Gap Dollar</th>
-        <th>Gap Percent</th>
-        <th>Should Cost</th>
-        <th>Actual Cost</th>
         <th>Industry</th>
         <th>Actions</th>
       </tr>
@@ -26,12 +20,6 @@
       <tr>
         <td><%= project.user.username %></td>
         <td><%= project.name %></td>
-        <td>$<%= @indirect %></td>
-        <td>$<%= project.direct_costs %></td>
-        <td>$<%= @gap_dollar %></td>
-        <td><%= @gap_percent %>%</td>
-        <td>$<%= @total %></td>
-        <td>$<%= project.actual_cost %></td>
         <td><%= project.industry %></td>
         <td>
           <% if current_user.id==project.user_id %>

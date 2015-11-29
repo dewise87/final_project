@@ -9,11 +9,16 @@
 <% end %>
 
 <div class="page-header">
-  <h3>Add Project</h3>
+  <div class="col-md-offset-2">
+    <h2>Add Project</h2>
+    <h4>The "Should Cost Model Builder" tool allows users to analyze the gap between what a product or service should cost versus what it does cost. This allows you to negotiate the price on the basis of numbers and fact, not relationships or budgets.</h4>
+    <h4>Research and Development (R&D), Sales General and Administrative (SG&A), and Profit (EBIT Margin) are considered indirect costs, and are dependent upon the direct cost of the product or service. Please input percentages as whole numbers (i.e. 4% = 4) based on industry comparables or the company itself. Direct costs are determined based on the individual components or labor required to delivered the product or service.</h4>
+    <h4>The final result is a gap between actual and should cost, depicted in both dollars and percentage.</h4>
+  </div>
 </div>
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-8 col-md-offset-2">
     <form action="/create_project" method="post">
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
