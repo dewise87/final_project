@@ -1,6 +1,15 @@
 <div class="page-header">
   <div class="col-md-offset-2">
-    <h3><%= @project.name %></h3>
+    <h2><%= @project.name %></h2>
+    <% if @gap_percent < 0 %>
+    <h4>The gap of this project is <%= @gap_percent %>%. This means that you are either getting a great deal on this product or service, or that your assumptions are overly conservative.</h4>
+    <% elsif @gap_percent < 10 %>
+    <h4>The gap of this project is <%= @gap_percent %>%. This is considered relatively small. It is recommended that you pursue higher priority projects instead.</h4>
+    <% elsif @gap_percent < 20 %>
+    <h4>The gap of this project is <%= @gap_percent %>%. This is considered somewhat high. It is recommended that you negotiate more favorable rates for this product or service. This is not, however, a top priority project.</h4>
+    <% else %>
+    <h4>The gap of this project is <%= @gap_percent %>%. This is considered very high. It is recommended that you negotiate more favorable rates for this product or service immediate. This should be a high priority project.</h4>
+    <% end %>
   </div>
 </div>
 
@@ -10,17 +19,14 @@
       <dt>User</dt>
       <dd><%= @project.user.username %></dd>
 
-      <dt>Indirect costs</dt>
-      <dd><%= number_to_currency(@indirect) %></dd>
+      <dt>Industry</dt>
+      <dd><%= @project.industry %></dd>
 
       <dt>Direct costs</dt>
       <dd><%= number_to_currency(@project.direct_costs) %></dd>
 
-      <dt>Gap dollar</dt>
-      <dd><%= number_to_currency(@gap_dollar) %></dd>
-
-      <dt>Gap percent</dt>
-      <dd><%= @gap_percent %>%</dd>
+      <dt>Indirect costs</dt>
+      <dd><%= number_to_currency(@indirect) %></dd>
 
       <dt>Should cost</dt>
       <dd><%= number_to_currency(@total) %></dd>
@@ -28,11 +34,11 @@
       <dt>Actual cost</dt>
       <dd><%= number_to_currency(@project.actual_cost) %></dd>
 
-      <dt>Industry</dt>
-      <dd><%= @project.industry %></dd>
+      <dt>Gap dollar</dt>
+      <dd><%= number_to_currency(@gap_dollar) %></dd>
 
-      <dt>Name</dt>
-      <dd><%= @project.name %></dd>
+      <dt>Gap percent</dt>
+      <dd><%= @gap_percent %>%</dd>
 
     </dl>
 
